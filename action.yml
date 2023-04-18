@@ -1,5 +1,5 @@
-name: 'clang-format action'
-description: 'run clang-format on your code'
+name: 'clang-format check/commit action'
+description: 'run clang-format on your code with the option to just check the formatting'
 author: 'purduesigbots'
 branding:
   icon: align-center
