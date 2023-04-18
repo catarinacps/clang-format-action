@@ -1,3 +1,4 @@
 #!/bin/sh -l
 
-git-clang-format --style="$1" "$2"
+git-clang-format $1 "--style=$2" "$3"
+

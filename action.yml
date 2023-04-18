@@ -4,9 +4,13 @@ author: 'purduesigbots'
 branding:
   icon: align-center
   color: yellow
-inputs: 
+inputs:
+  check:
+    description: 'Just check if the formatting is correct'
+    type: boolean
+    default: false
   style:
-    description: 'style passed to clang-format. reads .clang-format file in the repo by default. see clang-format docs for more.'
+    description: 'Style passed to clang-format. reads .clang-format file in the repo by default. See clang-format docs for more'
     default: 'file'
   base:
     description: 'The base branch/commit to base the formatting off of'
@@ -15,5 +19,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ fromJSON('["", "--diff"]')[inputs.check == 'true'] }}
     - ${{ inputs.style }}
     - ${{ inputs.base }}
